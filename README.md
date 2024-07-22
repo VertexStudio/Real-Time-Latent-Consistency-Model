@@ -1,21 +1,8 @@
----
-title: Real-Time Latent Consistency Model Image-to-Image ControlNet
-emoji: 🖼️🖼️
-colorFrom: gray
-colorTo: indigo
-sdk: docker
-pinned: false
-suggested_hardware: a10g-small
-disable_embedding: true
----
-
 # Real-Time Latent Consistency Model
 
 This demo showcases [Latent Consistency Model (LCM)](https://latent-consistency-models.github.io/) using [Diffusers](https://huggingface.co/docs/diffusers/using-diffusers/lcm) with a MJPEG stream server. You can read more about LCM + LoRAs with diffusers [here](https://huggingface.co/blog/lcm_lora).
 
-You need a webcam to run this demo. 🤗
-
-See a collecting with live demos [here](https://huggingface.co/collections/latent-consistency/latent-consistency-model-demos-654e90c52adb0688a0acbe6f)
+You need a webcam to run this demo.
 
 ## Running Locally
 
@@ -32,7 +19,7 @@ cd frontend && npm install && npm run build && cd ..
 python server/main.py --reload --pipeline img2imgSDTurbo 
  ```
 
-Don't forget to fuild the frontend!!! 
+Don't forget to fuild the frontend.
 
 ```bash
 cd frontend && npm install && npm run build && cd ..
@@ -178,16 +165,4 @@ docker run -ti -e PIPELINE=txt2imgLoraSDXL -p 7860:7860 --gpus all lcm-live
 ```
 
 
-# Demo on Hugging Face
 
-
-* [radames/Real-Time-Latent-Consistency-Model](https://huggingface.co/spaces/radames/Real-Time-Latent-Consistency-Model)  
-* [radames/Real-Time-SD-Turbo](https://huggingface.co/spaces/radames/Real-Time-SD-Turbo)  
-* [latent-consistency/Real-Time-LCM-ControlNet-Lora-SD1.5](https://huggingface.co/spaces/latent-consistency/Real-Time-LCM-ControlNet-Lora-SD1.5)  
-* [latent-consistency/Real-Time-LCM-Text-to-Image-Lora-SD1.5](https://huggingface.co/spaces/latent-consistency/Real-Time-LCM-Text-to-Image-Lora-SD1.5)  
-* [radames/Real-Time-Latent-Consistency-Model-Text-To-Image](https://huggingface.co/spaces/radames/Real-Time-Latent-Consistency-Model-Text-To-Image)  
-
-
-
-
-https://github.com/radames/Real-Time-Latent-Consistency-Model/assets/102277/c4003ac5-e7ff-44c0-97d3-464bb659de70
