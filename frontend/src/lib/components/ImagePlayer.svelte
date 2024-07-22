@@ -37,8 +37,7 @@
 </script>
 
 <div
-  class="relative mx-auto aspect-square max-w-lg self-center overflow-hidden rounded-lg border border-slate-300"
->
+  class="relative mx-auto w-full h-full self-center overflow-hidden rounded-md border-2 border-fuchsia-600">
   <!-- svelte-ignore a11y-missing-attribute -->
   {#if isLCMRunning}
     {#if !isExpanded}

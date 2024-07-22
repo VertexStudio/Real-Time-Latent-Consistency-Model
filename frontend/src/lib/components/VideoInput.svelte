@@ -10,8 +10,6 @@
     mediaDevices
   } from '$lib/mediaStream';
   import MediaListSwitcher from './MediaListSwitcher.svelte';
-  import Button from '$lib/components/Button.svelte';
-  import Expand from '$lib/icons/expand.svelte';
 
   export let width = 512;
   export let height = 512;
@@ -76,30 +74,13 @@
   $: if ($mediaStreamStatus == MediaStreamStatusEnum.CONNECTED && videoIsReady) {
     videoFrameCallbackId = videoEl.requestVideoFrameCallback(onFrameChange);
   }
-
-  function toggleFullscreen() {
-    if (videoIsReady) {
-      if (document.fullscreenElement) {
-        document.exitFullscreen();
-      } else {
-        videoEl.requestFullscreen();
-      }
-    }
-  }
 </script>
 
-<div class="relative mx-auto max-w-lg overflow-hidden rounded-lg border border-slate-300">
-  <div class="relative z-10 flex aspect-square w-full items-center justify-center object-cover">
+<div class="relative mx-auto w-64 h-64 overflow-hidden rounded shadow-md">
+  <div class="relative z-10 flex aspect-square w-full items-center justify-center object-cover border-2 border-fuchsia-600">
     {#if $mediaDevices.length > 0}
-      <div class="absolute bottom-0 right-0 z-10 flex bg-slate-400 bg-opacity-40">
+      <div class="absolute bottom-0 right-0 z-10 w-full bg-slate-400 bg-opacity-40">
         <MediaListSwitcher />
-        <Button
-          on:click={toggleFullscreen}
-          title={'Expand Fullscreen'}
-          classList={'text-sm ml-auto text-white p-1 shadow-lg rounded-lg opacity-50'}
-        >
-          <Expand classList={''} />
-        </Button>
       </div>
     {/if}
     <video

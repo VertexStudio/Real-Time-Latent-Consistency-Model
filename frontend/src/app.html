@@ -1,12 +1,36 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%sveltekit.assets%/favicon.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    %sveltekit.head%
-  </head>
-  <body data-sveltekit-preload-data="hover">
-    <div style="display: contents">%sveltekit.body%</div>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%sveltekit.assets%/icon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  %sveltekit.head%
+  <style>
+    body {
+      background-color: black; /* Sets the background color to black */
+      margin: 0; /* Remove default margin */
+      padding: 0; /* Remove default padding */
+    }
+    .centered-image {
+      position: fixed; /* Makes the image fixed on the screen */
+      top: 5px; /* Positions the image at the top left corner */
+      left: 0;
+      display: flex; /* Shows the image by default */
+      justify-content: center;
+      align-items: center;
+      width: 15vw; /* Width of the image */
+      height: auto; /* Maintains aspect ratio */
+    }
+    .centered-image img {
+      width: 100%; /* 100% width to make the image fit the container */
+      height: auto; /* Maintains aspect ratio */
+    }
+  </style>
+</head>
+<body data-sveltekit-preload-data="hover">
+  <div class="centered-image">
+    <img src="%sveltekit.assets%/vertex.png" alt="Vertex">
+  </div>
+  <div style="display: contents">%sveltekit.body%</div>
+</body>
 </html>

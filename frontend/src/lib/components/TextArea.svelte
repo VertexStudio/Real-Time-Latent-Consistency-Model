@@ -9,14 +9,14 @@
 </script>
 
 <div class="">
-  <label class="text-sm font-medium" for={params?.title}>
+  <label class="text-base font-medium" for={params?.title}>
     {params?.title}
   </label>
-  <div class="text-normal flex items-center rounded-md border border-gray-700">
+  <div class="text-base flex items-center rounded-md border-2 border-fuchsia-600">
     <textarea
-      class="mx-1 w-full px-3 py-2 font-light outline-none dark:text-black"
+      class="mx-1 w-full px-3 py-2 font-medium outline-none dark:text-white bg-black shadow-md"
       title={params?.title}
-      placeholder="Add your prompt here..."
+      placeholder="Craft your prompt here..."
       bind:value
     ></textarea>
   </div>

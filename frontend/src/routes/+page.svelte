@@ -113,29 +113,32 @@
     {/if}
   </article>
   {#if pipelineParams}
-    <article class="my-3 grid grid-cols-1 gap-3 sm:grid-cols-4">
-      {#if isImageMode}
-        <div class="col-span-2 sm:col-start-1">
-          <VideoInput
-            width={Number(pipelineParams.width.default)}
-            height={Number(pipelineParams.height.default)}
-          ></VideoInput>
-        </div>
-      {/if}
-      <div class={isImageMode ? 'col-span-2 sm:col-start-3' : 'col-span-4'}>
-        <ImagePlayer />
+  
+
+  <article class="my-3 grid grid-cols-1 gap-0 sm:grid-cols-4">
+    {#if isImageMode}
+      <div class="col-span-1 sm:col-start-1 sm:row-start-1">
+        <VideoInput
+          width={Number(pipelineParams.width.default)}
+          height={Number(pipelineParams.height.default)}
+        ></VideoInput>
       </div>
-      <div class="sm:col-span-4 sm:row-start-2">
-        <Button on:click={toggleLcmLive} {disabled} classList={'text-lg my-1 p-2'}>
-          {#if isLCMRunning}
-            Stop
-          {:else}
-            Start
-          {/if}
-        </Button>
-        <PipelineOptions {pipelineParams}></PipelineOptions>
-      </div>
-    </article>
+    {/if}
+    <div class={isImageMode ? 'col-span-4 sm:col-start-2 sm:mx-6' : 'col-span-4'}>
+      <ImagePlayer />
+    </div>
+    <div class="sm:col-span-4 sm:row-start-3">
+      <Button on:click={toggleLcmLive} {disabled} classList={'text-lg my-1 p-2 ' + (isLCMRunning ? 'bg-[#3c2339]' : 'bg-[#d6287a]')}>
+        {#if isLCMRunning}
+          Stop
+        {:else}
+          Start
+        {/if}
+      </Button>
+      <PipelineOptions {pipelineParams}></PipelineOptions>
+    </div>
+  </article>
+
   {:else}
     <!-- loading -->
     <div class="flex items-center justify-center gap-3 py-48 text-2xl">
@@ -149,4 +152,10 @@
   :global(html) {
     @apply text-black dark:bg-gray-900 dark:text-white;
   }
-</style>
+  .page-content h1 {
+      @apply text-5xl font-bold mb-5; 
+  }
+  .page-content p {
+      @apply text-2xl; 
+  }
+</style>  
